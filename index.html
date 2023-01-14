@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Elysia's Portfolio</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <meta name="description" content="Home page of my portfolio.">
+        <!-- Portfolio icon created by Freepik - Flaticon -->
+        <link href="./images/portfolio.png" rel="icon">
+        <link href="styles/main.css" rel="stylesheet" />
+        <script type="module" src="./firebaseAppInitialize.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <input type="checkbox" id="nav-check">
+                <div class="nav-btn">
+                    <label for="nav-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <ul class="nav-links">
+                    <li class="navbar-item"><a href="./index.html">Home</a></li>
+                    <li class="navbar-item"><a href="./about.html">About</a></li>
+                    <li class="navbar-item"><a href="./resume.html">Resume</a></li>
+                    <li class="navbar-item"><a href="./projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <figure class="background">
+                <div class="background-items-overlay">
+                    <h1 class="heading-title" style="background: black; margin: 0; font-size: 0;">
+                        <span>E</span>
+                        <span>l</span>
+                        <span>y</span>
+                        <span>s</span>
+                        <span>i</span>
+                        <span>a&nbsp;</span>
+                        <span>C</span>
+                        <span>h</span>
+                        <span>a</span>
+                        <span>n</span>
+                        <span>g</span>
+                    </h1>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/elysia-chang-31a58319a" aria-label="Go to my Linkedin"><img src="./images/linkedin.png" alt="Linkedin"></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/changt060" aria-label="Go to my Github"><img src="./images/github.png" alt="Github"></a>
+                        </li>
+                        <li>
+                            <a href="mailto:changt060@gmail.com" aria-label="Send me an email"><img src="./images/mail.png" alt="Email"></a>
+                        </li>
+                    </ul>
+                </div>
+            </figure>
+        </main>
+        <script>
+            let colors = ["rgb(226, 211, 211)", "rgb(221, 180, 180)", "rgb(226, 211, 211)", "white", "black", "white"];
+            let currentColor = 0; // for cycling through the colors list
+            let letters = document.querySelectorAll(".heading-title span");
+            let counter = 0; // for cycling through the letters
+
+            function changeColor() {
+                if (counter === letters.length) {
+                    if (currentColor === colors.length) {
+                        currentColor = 0;
+                    }
+                    currentColor++;
+                    counter = 0;
+                }
+                letters[counter].style.color = colors[currentColor];
+                counter++;
+            }
+            window.onload = setInterval(changeColor, 200);
+        </script>
+    </body>
+</html>

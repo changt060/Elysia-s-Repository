@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Elysia's Portfolio | Projects</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Project page of my portfolio showcasing different projects I undertook during my undergrad years.">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+        <link href="./images/portfolio.png" rel="icon">
+        <link href="styles/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <input type="checkbox" id="nav-check">
+                <div class="nav-btn">
+                    <label for="nav-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <ul class="nav-links">
+                    <li class="navbar-item"><a href="./index.html">Home</a></li>
+                    <li class="navbar-item"><a href="./about.html">About</a></li>
+                    <li class="navbar-item"><a href="./resume.html">Resume</a></li>
+                    <li class="navbar-item"><a href="./projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="full-page-top">
+                <h1 class="heading-title" style="background: black; margin: 0; margin-top: 15vh; font-size: 24pt;">&nbsp;My Projects&nbsp;</h1>
+                <h2 style="justify-self: flex-end; color: rgb(226, 211, 211); margin-top: 25vh;">Scroll</h2>
+                <h1 style="justify-self: flex-end; margin: 0;"><i class="fa-solid fa-chevron-down"></i>
+                </h1>
+            </section>
+            <div class="content-section">
+                <br><br><br>
+                <section>
+                    <h2>VeRFluent</h2>
+                    <h3>Inspiration</h3>
+                    <p>We were thinking about how when studying abroad, you are able to learn the language faster 
+                        because you are immersed in the environment. You are being forced to communicate with the 
+                        locals and adapt to this new culture quickly. Using VR, we thought we could emulate this 
+                        immersive study abroad experience. Now students would be able to experience the culture 
+                        and gain that language fluency without worrying about the costly prices of airline tickets 
+                        and living expenses.
+                    </p>
+                    <h3>What It Does</h3>
+                    <p>VeRFluent puts the user into situations with objectives to complete, which aim to help the 
+                        user improve his/her speaking and listening skills. Right now, our app supports Mandarin. 
+                        The game simulates a short scenario of one eating at a Taiwanese host's house. The user 
+                        will practice conversational phrases and vocabularies and learn the proper dinning 
+                        etiquette.
+                    </p>
+                    <h3>Built With</h3>
+                    <ul class="tools-list">
+                        <li>C#</li>
+                        <li>Unity 3D</a></li>
+                        <li>Blender</li> 
+                    </ul>
+                    <br><br>
+                    <video controls class="video">
+                        <source src="ve_r_fluent.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </section>
+                <br><br><br>
+                <section>
+                    <h2>Ray Tracer</h2>
+                    <h3>What It Does</h3>
+                    <p>A ray-tracing program implemented from scratch for our Computer Graphics course assignment.
+                    </p>
+                    <h3>Built With</h3>
+                    <ul class="tools-list">
+                        <li>C++</li>
+                    </ul>
+                    <section class="slideshow">
+                        <div class="content">
+                           <div class="slider-content">
+                                <figure class="shadow"><img src="./images/scene4-ambient.png"></figure>
+                                <figure class="shadow"><img src="./images/scene4-diffuse.png"></figure>
+                                <figure class="shadow"><img src="./images/scene4-specular.png"></figure>
+                                <figure class="shadow"><img src="./images/scene5.png"></figure>
+                                <figure class="shadow"><img src="./images/scene6.png"></figure>
+                                <figure class="shadow"><img src="./images/scene7.png"></figure>
+                           </div>
+                        </div>
+                     </section>
+                </section>
+                <br><br><br>
+                <section>
+                    <h2>Telegram Bots</h2>
+                    <h3>What It Does</h3>
+                    <p>Interactive bots offering various functionalities such as text-to-speech conversion, 
+                        optical character recognition, language translation, and news articles scraping.
+                    </p>
+                    <h3>Built With</h3>
+                    <ul class="tools-list">
+                        <li>Node.js</li>
+                        <li>Azure</li>
+                    </ul>
+                    <div class="slider">
+                        <a href="#slide-1-telegrambots">1</a>
+                        <a href="#slide-2-telegrambots">2</a>
+                        <a href="#slide-3-telegrambots">3</a>
+                        <a href="#slide-4-telegrambots">4</a>                      
+                        <div class="slides">
+                            <div id="slide-1-telegrambots">
+                                <img src="./images/TelegramBots1.jpg" alt="Telegram Bot Screenshot">
+                            </div>
+                            <div id="slide-2-telegrambots">
+                                <img src="./images/TelegramBots2.jpg" alt="Telegram Bot Screenshot">
+                            </div>
+                            <div id="slide-3-telegrambots">
+                                <img src="./images/TelegramBots3.jpg" alt="Telegram Bot Screenshot">
+                            </div>
+                            <div id="slide-4-telegrambots">
+                                <img src="./images/TelegramBots4.jpg" alt="Telegram Bot Screenshot">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script>
+            const pElements = document.querySelectorAll("p");
+            const h3Elements = document.querySelectorAll("h3");
+            const ulElements = document.querySelectorAll("ul.tools-list");
+            function isScrolledIntoView(el) {
+                let rect = el.getBoundingClientRect();
+                let elemTop = rect.top;
+                let elemBottom = rect.bottom;
+                let isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+                return isVisible;
+            }
+            const handleScrollAnimation = () => {
+                pElements.forEach((el) => {
+                    if (isScrolledIntoView(el)) {
+                        el.classList.add('left-slidein-2');
+                    } else  {
+                        el.classList.remove('left-slidein-2');
+                    }
+                });
+                h3Elements.forEach((el) => {
+                    if (isScrolledIntoView(el)) {
+                        el.classList.add('right-slidein-2');
+                    } else  {
+                        el.classList.remove('right-slidein-2');
+                    }
+                });
+                ulElements.forEach((el) => {
+                    if (isScrolledIntoView(el)) {
+                        el.classList.add('left-slidein-2');
+                    } else  {
+                        el.classList.remove('left-slidein-2');
+                    }
+                });
+            };
+            window.addEventListener("scroll", (e) => { 
+                handleScrollAnimation();
+            });
+        </script>
+    </body>
+</html>

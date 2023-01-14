@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./resume.html">Resume</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./experiments.html">Experiments</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Experiments</h1>
+            <section>
+                <form action="https://www.google.com/" id="search-form" method="GET">
+                    <fieldset>
+                        <legend>Google Search</legend>
+                        <label for="words">Choose a word to search for:</label>
+                        <select name="q" id="words">
+                            <optgroup label="Colleges">
+                                <option value="UCSD">UCSD</option>
+                                <option value="SDSU">SDSU</option>
+                            </optgroup>
+                            <optgroup label="High Schools">
+                                <option value="Saratoga High">Saratoga High</option>
+                                <option value="Garden Grove High">Garden Grove High</option>
+                            </optgroup>
+                        </select>
+                        <button type="submit" form="search-form" value="Submit">Submit</button>
+                    </fieldset>
+                </form>
+                <hr>
+                <label for="pet-choice">Choose a pet option:</label>
+                <input list="pet-options" id="pet-choice"/>
+                <datalist id="pet-options">
+                    <option value="dog">
+                    <option value="cat">
+                    <option value="rabbit">
+                </datalist>
+                <hr>
+                <table>
+                    <caption>Animals and their babies</caption>
+                    <colgroup>
+                        <col style="background-color: rgb(253, 190, 16)">
+                    </colgroup>
+                    <tr>
+                        <th>Animal</th>
+                        <th>Dog</th>
+                        <th>Cat</th>
+                        <th>Rabbit</th>
+                    </tr>
+                    <tr>
+                        <td>Baby</td>
+                        <td>Puppy</td>
+                        <td>Kitten</td>
+                        <td>Bunny</td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <template>
+                    <p>This content is hidden!</p>
+                </template>
+                <figure>
+                    <figcaption>Listen to an orchestra sample:</figcaption>
+                    <audio controls src="./audio_placeholder.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </figure>
+            </section>
+            <section>
+                <div>
+                    <svg width="400" height="200">
+                        <circle cx="200" cy="100" r="50" stroke="black" fill="white"/>
+                    </svg>
+                </div>
+                <div>
+                    <p><strong>ATTENTION:</strong> The code below draws a circle <span style="color:rgb(22, 22, 189)">exactly identical</span> to the one above on the canvas</p>
+                    <pre>
+                        <code>
+                            var el = document.getElementById("my-canvas");
+                            var drawingCtx = el.getContext("2d");
+                            drawingCtx.beginPath();
+                            drawingCtx.arc(200, 100, 50, 0, 2 * Math.PI);
+                            drawingCtx.stroke();
+                        </code>
+                    </pre>
+                    <canvas id="my-canvas" width="400" height="200"></canvas>
+                </div>
+            </section>
+        </main>
+        <script>
+            var el = document.getElementById("my-canvas");
+            var drawingCtx = el.getContext("2d");
+            drawingCtx.beginPath();
+            drawingCtx.arc(200, 100, 50, 0, 2 * Math.PI);
+            drawingCtx.stroke();
+        </script>
+    </body>
+</html>
